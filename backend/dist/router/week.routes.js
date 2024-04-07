@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const week_1 = require("../controller/week");
+const router = (0, express_1.Router)();
+router.get('/all-week', week_1.WeekGet);
+router.post('/week/create', week_1.WeekCreate);
+router.put('/week/update/:id', week_1.WeekUpdate);
+router.delete('/week/delete/:id', week_1.WeekDelete);
+exports.default = router;
