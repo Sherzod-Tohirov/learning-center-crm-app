@@ -1,0 +1,22 @@
+.sidebar-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 34px;
+  color: #fff;
+}
+
+.active-item {
+    position: relative;
+    align-items: center;
+    background-color: #01265f;
+}
+
+.active-item::after {
+    position: absolute;
+    right: 4px;
+    width: 4px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #fff;
+    content: '';
+}
