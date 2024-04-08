@@ -1,12 +1,17 @@
-import './App.css'
+import "./App.css";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
-
   return (
     <>
-      <h1 className='text-center text-4xl text-red-400'>Hello, App</h1>
+      <div className="flex">
+        <Sidebar />
+        <div className="container">
+            Content is here.
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
 export default App;
