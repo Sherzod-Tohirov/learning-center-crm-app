@@ -1,11 +1,11 @@
-import { Bar } from "../../../../constants/svg";
 import "./card.css";
 import PropTypes from "prop-types";
-export function Card({ data }) {
+import { Bar } from "../../../../constants/svg";
+export function Card({ data: { title, amount } }) {
   return (
     <li className="card">
-      <h3 className="card-title">{data.title}</h3>
-      <p className="card-desc">{data.amount} ta</p>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-desc">{amount} ta</p>
       <div className="flex justify-end">
         <Bar />
       </div>

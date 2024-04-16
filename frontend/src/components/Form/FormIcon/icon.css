@@ -1,0 +1,11 @@
+.icon {
+    position: absolute;
+    display: flex;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+}
+
+.search {
+    background: url('../../../assets/images/icons/search.svg') no-repeat center;
+}

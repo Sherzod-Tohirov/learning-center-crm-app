@@ -5,8 +5,8 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <div className="flex">
-        <Sidebar />
+      <div className="flex items-stretch">
+          <Sidebar />
         <div className="flex flex-col w-full">
           <Header />
           <Outlet />

@@ -6,19 +6,21 @@ import "./sidebar.css";
 export function Sidebar() {
   const location = useLocation();
   return (
-    <div className="max-w-[253px] w-full bg-[#2F49D1] py-[22px] h-screen overflow-auto">
+    <div className="max-w-[253px] w-full bg-[#2F49D1] py-[22px] min-h-screen">
       <div className="flex items-center justify-between pb-5 px-5 border-b-[1px] border-white">
         <Logo />
         <button>
           <ToggleBar />
         </button>
       </div>
-      <ul className="pt-8 flex flex-col gap-[10px]">
+      <ul className="pt-8 flex flex-col gap-[10px] sticky top-[-10px]">
         {sidebar.map((item) => (
           <li
             key={item.id}
             className={`w-full flex relative ${
-              location.pathname === item.route ? " active-item " : "hover:bg-blue-600"
+              location.pathname === item.route
+                ? " active-item "
+                : "hover:bg-blue-600"
             }`}
           >
             <Link
