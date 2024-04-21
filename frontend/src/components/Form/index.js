@@ -5,6 +5,7 @@ import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
 import { FormSelect } from "./FormSelect";
 import { FormSearchInput } from "./FormSearchInput";
+import { FormFileInput } from "./FormFileInput";
 export {
   Form,
   FormButton,
@@ -13,4 +14,5 @@ export {
   FormSelect,
   FormLabel,
   FormSearchInput,
+  FormFileInput,
 };

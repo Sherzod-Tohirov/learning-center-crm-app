@@ -1,3 +1,7 @@
 .tr:nth-child(even) {
   background: rgba(0, 28, 175, 0.1);
 }
+
+.tr:has(.td):hover {
+  background-color: #00000010;
+}

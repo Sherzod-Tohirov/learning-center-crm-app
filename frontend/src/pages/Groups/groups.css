@@ -1,0 +1,9 @@
+.groups-wrapper {
+    max-width: 1144px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-left: 80px;
+    gap: 54px;
+}

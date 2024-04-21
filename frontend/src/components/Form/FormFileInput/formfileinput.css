@@ -1,0 +1,17 @@
+.file-label {
+    width: 320px;
+    padding: 13px 12px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 8px;
+    border: 1px solid rgba(47, 73, 209, 0.6);
+    background: #fff url("../../../assets/images/icons/download.svg") no-repeat center right 12px;
+    cursor: pointer;
+}
+
+
+.file-input {
+    display: none;
+}
