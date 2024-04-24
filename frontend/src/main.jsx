@@ -1,13 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createTheme, WuiProvider } from "@welcome-ui/core";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { router } from "../router.jsx";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  </React.StrictMode>
+import { store } from "./store/store.js";
+const theme = createTheme();
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <WuiProvider theme={theme}>
+      <Provider store={store}>
+        <RouterProvider router={router}>
+          <App />
+        </RouterProvider>
+      </Provider>
+    </WuiProvider>
+  </StrictMode>
 );

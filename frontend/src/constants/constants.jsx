@@ -1,3 +1,4 @@
+import { useGetSubjectsQuery } from "../store/subjects/subjectApi";
 import { Cap, CreditCard, Directory, Home, People } from "./svg";
 
 export const sidebar = [
