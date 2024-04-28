@@ -1,15 +1,21 @@
+import "./sidebar.css";
 import { sidebar } from "../../constants/constants";
 import { ToggleBar } from "../../constants/svg";
 import { Logo } from "../Logo";
-import { Link, useLocation } from "react-router-dom";
-import "./sidebar.css";
+import { handleSidebarOpen } from "./utils";
+import { useSidebarOpen } from "./hooks/useSidebarOpen";
+import { useSidebarLocation } from "./hooks/useSidebarLocation";
 export function Sidebar() {
-  const location = useLocation();
+  const { Link, location } = useSidebarLocation();
+  const { sidebarOpen, setSidebarOpen, sidebarRef } = useSidebarOpen();
   return (
-    <div className="max-w-[253px] w-full bg-[#2F49D1] py-[22px] min-h-screen">
+    <div className={`sidebar`} ref={sidebarRef}>
       <div className="flex items-center justify-between pb-5 px-5 border-b-[1px] border-white">
-        <Logo />
-        <button>
+        {sidebarOpen ? <Logo isTextVisible={sidebarOpen} /> : ""}
+        <button
+          className="active:scale-95 transition-all duration-200 min-h-[60px]"
+          onClick={(e) => handleSidebarOpen(e, sidebarRef, setSidebarOpen)}
+        >
           <ToggleBar />
         </button>
       </div>
@@ -23,12 +29,13 @@ export function Sidebar() {
                 : "hover:bg-blue-600"
             }`}
           >
-            <Link
-              to={item.route}
-              className="flex items-center gap-4 pt-3 pr-1 pb-[5px] pl-5 w-full"
-            >
+            <Link to={item.route} className="sidebar-link">
               {item.svg}
-              <span className="sidebar-text">{item.title}</span>
+              {sidebarOpen ? (
+                <span className="sidebar-text">{item.title}</span>
+              ) : (
+                ""
+              )}
             </Link>
           </li>
         ))}
